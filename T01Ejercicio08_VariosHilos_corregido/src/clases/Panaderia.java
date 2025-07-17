@@ -23,7 +23,12 @@ public class Panaderia {
 
     public synchronized boolean puedoComprar(String nombre, int cantidad) throws InterruptedException {
         String deseo = Colores.CYAN + nombre + ": Quiero comprar " + cantidad + ". ";
-        while (panDisponible < cantidad) {          
+        while (panDisponible < cantidad) {
+            
+            if (!continuarFabricacion) {
+                System.out.println(deseo+Colores.ROJO+"Ya no se fabrica pan y no hay suficiente. Me voy.");
+                return false;
+            }
             System.out.println(deseo + Colores.ROJO + "No puedo comprar (" + cantidad + "). No hay pan suficiente (" + panDisponible + "). Me pongo a la espera");
             wait();
         }
@@ -46,6 +51,10 @@ public class Panaderia {
 
     public boolean isContinuarFabricacion() {
         return continuarFabricacion;
+    }
+
+    public synchronized void cerrar() {
+        notifyAll();
     }
 
 } // Fin class

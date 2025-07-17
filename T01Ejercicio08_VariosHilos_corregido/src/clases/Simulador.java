@@ -44,7 +44,6 @@ public class Simulador {
                         Cliente cliente = new Cliente("Cliente " + numOrdenCliente, new Random().nextInt(1, 5), panaderia);
                         clientes.add(cliente);
                         cliente.start();
-                        cliente.join();
                     } // Fin for
                     break;
                 case 2:
@@ -52,11 +51,13 @@ public class Simulador {
                     break;
                 case 3:
                     panaderia.setContinuarFabricacion(false);
+                    panaderia.cerrar();
                     System.out.println(Colores.VERDE + "Saliendo del programa...");
-                    mostrarEstado();
                     panadero1.join();
                     panadero2.join();
                     panadero3.join();
+                    mostrarEstado();
+
                     System.out.println("Fabricación terminada.");
                     break;
                 default:
