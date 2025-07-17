@@ -15,14 +15,14 @@ public class Panadero extends Thread {
     @Override
     public void run() {
         System.out.println(Colores.VERDE + this.getName() + " ha iniciado la producción de pan...");
-        while (panaderia.puedoFabricar(this.getName())) {
+        while (panaderia.isContinuarFabricacion() && panaderia.puedoFabricar(this.getName())) {
             try {
                 Thread.sleep(new Random().nextInt(10000));
             } catch (InterruptedException ex) {
                 System.out.println("Error");
             }
         }
-        System.out.println(Colores.VERDE + "Capacidad de pan ha llegado al límite");
+        System.out.println(Colores.VERDE + "Capacidad de pan ha llegado al límite y/o me voy a casa");
 
     }
 
