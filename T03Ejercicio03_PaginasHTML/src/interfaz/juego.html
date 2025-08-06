@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Guerra de Barcos</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background: #e0f7fa;
+            }
+            h1 {
+                color: #01579b;
+            }
+            table {
+                margin: 20px auto;
+                border-collapse: collapse;
+            }
+            td {
+                width: 40px;
+                height: 40px;
+                border: 1px solid #999;
+                font-size: 20px;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .label {
+                background-color: #f0f0f0;
+                font-weight: bold;
+            }
+            .agua {
+                background-color: #b3e5fc;
+            }
+            .tocado {
+                background-color: #ffcdd2;
+            }
+            .barco {
+                background-color: #c8e6c9; /* verde suave */
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <h1>Guerra de Barcos</h1>
+
+        <p>Aciertos: %d | Intentos restantes: %d</p>
+
+        <form method="POST" action="/jugar">
+            <input name="coordenadas" maxlength="3" placeholder="Ej: A5">
+            <button type="submit">Disparar</button>
+        </form>
+
+        <table>
+            %s
+        </table>
+
+    </body>
+</html>
