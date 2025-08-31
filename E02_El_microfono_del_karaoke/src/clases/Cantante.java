@@ -2,7 +2,7 @@ package clases;
 
 public class Cantante extends Thread {
 
-    final int NUM_CANCIONES = 8;
+    public final int NUM_CANCIONES = 8;
     private Microfono microfono;
 
     public Cantante(String nombre, Microfono microfono) {

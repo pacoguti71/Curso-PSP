@@ -4,7 +4,7 @@ import utilidades.Colores;
 
 public class Carpintero extends Thread {
 
-    final int NUM_PIEZAS = 10;
+    public final int NUM_PIEZAS = 10;
     private Sierra sierra;
 
     public Carpintero(String nombre, Sierra sierra) {
